@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h1>Despesas por Categoria</h1>
+    <div style="max-width: 800px; margin: 0 auto;">
+        <canvas id="categoriaChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    
+    <script>
+        var ctxCategoria = document.getElementById('categoriaChart').getContext('2d');
+        var dataCategoria = {
+            labels: [{% for despesa in despesas %}"{{ despesa.categoria_economica_nome }}",{% endfor %}],
+            datasets: [{
+                data: [{% for despesa in despesas %}{{ despesa.total_despesas }},{% endfor %}],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(153, 102, 255, 0.6)',
+                    'rgba(255, 159, 64, 0.6)'
+                ],
+                borderColor: 'rgba(0, 0, 0, 0.6)',
+                borderWidth: 1
+            }]
+        };
+        var optionsCategoria = {
+            responsive: true
+        };
+        var myCategoriaChart = new Chart(ctxCategoria, {
+            type: 'pie',
+            data: dataCategoria,
+            options: optionsCategoria
+        });
+    </script>
+{% endblock %}

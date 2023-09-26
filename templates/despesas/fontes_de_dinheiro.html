@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h1>Fontes de Dinheiro</h1>
+    <div style="max-width: 800px; margin: 0 auto;">
+        <canvas id="fonteChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+
+    <script>
+        var ctxFonte = document.getElementById('fonteChart').getContext('2d');
+        var dataFonte = {
+            labels: [{% for fonte in fontes %}"{{ fonte.fonte_recurso_nome }}",{% endfor %}],
+            datasets: [{
+                label: 'Total Pago',
+                data: [{% for fonte in fontes %}{{ fonte.total_despesas }},{% endfor %}],
+                backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                borderColor: 'rgba(0, 0, 0, 0.6)',
+                borderWidth: 1
+            }]
+        };
+        var optionsFonte = {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            responsive: true
+        };
+        var myFonteChart = new Chart(ctxFonte, {
+            type: 'bar',
+            data: dataFonte,
+            options: optionsFonte
+        });
+    </script>
+{% endblock %}

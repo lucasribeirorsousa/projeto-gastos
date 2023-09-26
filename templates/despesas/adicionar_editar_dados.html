@@ -1,0 +1,273 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Adicionar/Editar Dados</h1>
+
+    <form method="post" id="dadosForm">
+        {% csrf_token %}
+        
+              <!-- Ano Movimentação -->
+              <div class="mb-3">
+                <label for="ano_movimentacao" class="form-label">Ano Movimentação</label>
+                <input type="text" class="form-control" id="ano_movimentacao" name="ano_movimentacao">
+            </div>
+    
+            <!-- Mês Movimentação -->
+            <div class="mb-3">
+                <label for="mes_movimentacao" class="form-label">Mês Movimentação</label>
+                <input type="text" class="form-control" id="mes_movimentacao" name="mes_movimentacao">
+            </div>
+    
+            <!-- Órgão Código -->
+            <div class="mb-3">
+                <label for="orgao_codigo" class="form-label">Órgão Código</label>
+                <input type="text" class="form-control" id="orgao_codigo" name="orgao_codigo">
+            </div>
+    
+            <!-- Órgão Nome -->
+            <div class="mb-3">
+                <label for="orgao_nome" class="form-label">Órgão Nome</label>
+                <input type="text" class="form-control" id="orgao_nome" name="orgao_nome">
+            </div>
+    
+            <!-- Unidade Código -->
+            <div class="mb-3">
+                <label for="unidade_codigo" class="form-label">Unidade Código</label>
+                <input type="text" class="form-control" id="unidade_codigo" name="unidade_codigo">
+            </div>
+    
+            <!-- Unidade Nome -->
+            <div class="mb-3">
+                <label for="unidade_nome" class="form-label">Unidade Nome</label>
+                <input type="text" class="form-control" id="unidade_nome" name="unidade_nome">
+            </div>
+    
+            <!-- Categoria Econômica Código -->
+            <div class="mb-3">
+                <label for="categoria_economica_codigo" class="form-label">Categoria Econômica Código</label>
+                <input type="text" class="form-control" id="categoria_economica_codigo" name="categoria_economica_codigo">
+            </div>
+    
+            <!-- Categoria Econômica Nome -->
+            <div class="mb-3">
+                <label for="categoria_economica_nome" class="form-label">Categoria Econômica Nome</label>
+                <input type="text" class="form-control" id="categoria_economica_nome" name="categoria_economica_nome">
+            </div>
+    
+            <!-- Grupo Despesa Código -->
+            <div class="mb-3">
+                <label for="grupo_despesa_codigo" class="form-label">Grupo Despesa Código</label>
+                <input type="text" class="form-control" id="grupo_despesa_codigo" name="grupo_despesa_codigo">
+            </div>
+    
+            <!-- Grupo Despesa Nome -->
+            <div class="mb-3">
+                <label for="grupo_despesa_nome" class="form-label">Grupo Despesa Nome</label>
+                <input type="text" class="form-control" id="grupo_despesa_nome" name="grupo_despesa_nome">
+            </div>
+    
+            <!-- Modalidade Aplicação Código -->
+            <div class="mb-3">
+                <label for="modalidade_aplicacao_codigo" class="form-label">Modalidade Aplicação Código</label>
+                <input type="text" class="form-control" id="modalidade_aplicacao_codigo" name="modalidade_aplicacao_codigo">
+            </div>
+    
+            <!-- Modalidade Aplicação Nome -->
+            <div class="mb-3">
+                <label for="modalidade_aplicacao_nome" class="form-label">Modalidade Aplicação Nome</label>
+                <input type="text" class="form-control" id="modalidade_aplicacao_nome" name="modalidade_aplicacao_nome">
+            </div>
+
+            <!-- Elemento Código -->
+            <div class="mb-3">
+                <label for="elemento_codigo" class="form-label">Elemento Código</label>
+                <input type="text" class="form-control" id="elemento_codigo" name="elemento_codigo">
+            </div>
+
+            <!-- Elemento Nome -->
+            <div class="mb-3">
+                <label for="elemento_nome" class="form-label">Elemento Nome</label>
+                <input type="text" class="form-control" id="elemento_nome" name="elemento_nome">
+            </div>
+
+            <!-- Subelemento Código -->
+            <div class="mb-3">
+                <label for="subelemento_codigo" class="form-label">Subelemento Código</label>
+                <input type="text" class="form-control" id="subelemento_codigo" name="subelemento_codigo">
+            </div>
+
+            <!-- Subelemento Nome -->
+            <div class="mb-3">
+                <label for="subelemento_nome" class="form-label">Subelemento Nome</label>
+                <input type="text" class="form-control" id="subelemento_nome" name="subelemento_nome">
+            </div>
+
+            <!-- Função Código -->
+            <div class="mb-3">
+                <label for="funcao_codigo" class="form-label">Função Código</label>
+                <input type="text" class="form-control" id="funcao_codigo" name="funcao_codigo">
+            </div>
+
+            <!-- Função Nome -->
+            <div class="mb-3">
+                <label for="funcao_nome" class="form-label">Função Nome</label>
+                <input type="text" class="form-control" id="funcao_nome" name="funcao_nome">
+            </div>
+
+            <!-- Subfunção Código -->
+            <div class="mb-3">
+                <label for="subfuncao_codigo" class="form-label">Subfunção Código</label>
+                <input type="text" class="form-control" id="subfuncao_codigo" name="subfuncao_codigo">
+            </div>
+
+            <!-- Subfunção Nome -->
+            <div class="mb-3">
+                <label for="subfuncao_nome" class="form-label">Subfunção Nome</label>
+                <input type="text" class="form-control" id="subfuncao_nome" name="subfuncao_nome">
+            </div>
+
+            <!-- Programa Código -->
+            <div class="mb-3">
+                <label for="programa_codigo" class="form-label">Programa Código</label>
+                <input type="text" class="form-control" id="programa_codigo" name="programa_codigo">
+            </div>
+
+            <!-- Programa Nome -->
+            <div class="mb-3">
+                <label for="programa_nome" class="form-label">Programa Nome</label>
+                <input type="text" class="form-control" id="programa_nome" name="programa_nome">
+            </div>
+
+            <!-- Ação Código -->
+            <div class="mb-3">
+                <label for="acao_codigo" class="form-label">Ação Código</label>
+                <input type="text" class="form-control" id="acao_codigo" name="acao_codigo">
+            </div>
+
+            <!-- Ação Nome -->
+            <div class="mb-3">
+                <label for="acao_nome" class="form-label">Ação Nome</label>
+                <input type="text" class="form-control" id="acao_nome" name="acao_nome">
+            </div>
+
+            <!-- Fonte Recurso Código -->
+            <div class="mb-3">
+                <label for="fonte_recurso_codigo" class="form-label">Fonte Recurso Código</label>
+                <input type="text" class="form-control" id="fonte_recurso_codigo" name="fonte_recurso_codigo">
+            </div>
+
+            <!-- Fonte Recurso Nome -->
+            <div class="mb-3">
+                <label for="fonte_recurso_nome" class="form-label">Fonte Recurso Nome</label>
+                <input type="text" class="form-control" id="fonte_recurso_nome" name="fonte_recurso_nome">
+            </div>
+
+            <!-- Empenho Ano -->
+            <div class="mb-3">
+                <label for="empenho_ano" class="form-label">Empenho Ano</label>
+                <input type="text" class="form-control" id="empenho_ano" name="empenho_ano">
+            </div>
+
+            <!-- Empenho Modalidade Nome -->
+            <div class="mb-3">
+                <label for="empenho_modalidade_nome" class="form-label">Empenho Modalidade Nome</label>
+                <input type="text" class="form-control" id="empenho_modalidade_nome" name="empenho_modalidade_nome">
+            </div>
+
+            <!-- Empenho Modalidade Código -->
+            <div class="mb-3">
+                <label for="empenho_modalidade_codigo" class="form-label">Empenho Modalidade Código</label>
+                <input type="text" class="form-control" id="empenho_modalidade_codigo" name="empenho_modalidade_codigo">
+            </div>
+
+            <!-- Empenho Número -->
+            <div class="mb-3">
+                <label for="empenho_numero" class="form-label">Empenho Número</label>
+                <input type="text" class="form-control" id="empenho_numero" name="empenho_numero">
+            </div>
+
+            <!-- Subempenho -->
+            <div class="mb-3">
+                <label for="subempenho" class="form-label">Subempenho</label>
+                <input type="text" class="form-control" id="subempenho" name="subempenho">
+            </div>
+
+            <!-- Indicador Subempenho -->
+            <div class="mb-3">
+                <label for="indicador_subempenho" class="form-label">Indicador Subempenho</label>
+                <input type="text" class="form-control" id="indicador_subempenho" name="indicador_subempenho">
+            </div>
+
+            <!-- Credor Código -->
+            <div class="mb-3">
+                <label for="credor_codigo" class="form-label">Credor Código</label>
+                <input type="text" class="form-control" id="credor_codigo" name="credor_codigo">
+            </div>
+
+            <!-- Credor Nome -->
+            <div class="mb-3">
+                <label for="credor_nome" class="form-label">Credor Nome</label>
+                <input type="text" class="form-control" id="credor_nome" name="credor_nome">
+            </div>
+
+            <!-- Modalidade Licitação Código -->
+            <div class="mb-3">
+                <label for="modalidade_licitacao_codigo" class="form-label">Modalidade Licitação Código</label>
+                <input type="text" class="form-control" id="modalidade_licitacao_codigo" name="modalidade_licitacao_codigo">
+            </div>
+
+            <!-- Modalidade Licitação Nome -->
+            <div class="mb-3">
+                <label for="modalidade_licitacao_nome" class="form-label">Modalidade Licitação Nome</label>
+                <input type="text" class="form-control" id="modalidade_licitacao_nome" name="modalidade_licitacao_nome">
+            </div>
+
+            <!-- Valor Empenhado -->
+            <div class="mb-3">
+                <label for="valor_empenhado" class="form-label">Valor Empenhado</label>
+                <input type="text" class="form-control" id="valor_empenhado" name="valor_empenhado">
+            </div>
+
+            <!-- Valor Liquidado -->
+            <div class="mb-3">
+                <label for="valor_liquidado" class="form-label">Valor Liquidado</label>
+                <input type="text" class="form-control" id="valor_liquidado" name="valor_liquidado">
+            </div>
+
+            <!-- Valor Pago -->
+            <div class="mb-3">
+                <label for="valor_pago" class="form-label">Valor Pago</label>
+                <input type="text" class="form-control" id="valor_pago" name="valor_pago">
+            </div>
+                
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+</div>
+
+<script>
+    $(document).ready(function () {
+        // Manipular envio do formulário
+        $('#dadosForm').on('submit', function (e) {
+            e.preventDefault();
+            var $form = $(this);
+            var url = '{% url "api_todos_os_dados" %}';  // URL da API para adicionar/editar dados
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                data: $form.serialize(),
+                success: function (data) {
+                    if (data.success) {
+                        // Redirecionar para a página de listagem de dados após o sucesso
+                        window.location.href = '{% url "todos_os_dados" %}';
+                    } else {
+                        // Exibir erros ou lidar com erros de validação
+                        // Você pode exibir mensagens de erro aqui
+                    }
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}
