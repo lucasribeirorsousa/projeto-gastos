@@ -15,7 +15,7 @@ Este é um projeto Django para rastreamento e gerenciamento de gastos públicos.
 1 **Clone este repositório:**
     
 ```bash
-git clone https://github.com/seu-usuario/projeto-gastos.git
+git clone https://github.com/lucasribeirorsousa/projeto-gastos.git
 cd projeto-gastos
 ```
 
