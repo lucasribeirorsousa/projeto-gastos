@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework import generics
+from rest_framework.pagination import PageNumberPagination
 from django.views.generic import ListView, TemplateView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
@@ -47,7 +48,7 @@ class TodosOsDadosListView(ListView):
     model = Gasto
     template_name = 'despesas/todos_os_dados.html'
     context_object_name = 'gastos'
-
+    paginate_by = 10 
 
 class AdicionarDadosView(TemplateView):
     template_name = 'despesas/adicionar_editar_dados.html'
@@ -64,9 +65,16 @@ class ExcluirDadosView(DeleteView):
     success_url = reverse_lazy('todos_os_dados')
 
 
+class CustomPageNumberPagination(PageNumberPagination):
+    page_size = 10  
+    page_size_query_param = 'page_size'
+    max_page_size = 100  
+
+
 class GastoListCreateView(generics.ListCreateAPIView):
     queryset = Gasto.objects.all()
     serializer_class = GastoSerializer
+    pagination_class = CustomPageNumberPagination
 
 
 class GastoRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):

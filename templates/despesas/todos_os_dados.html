@@ -7,7 +7,7 @@
     <!-- Botão para adicionar novo registro -->
     <a href="{% url 'adicionar_editar_dados' %}" class="btn btn-primary mb-3">Adicionar Dados</a>
 
-    <div style="max-height: 400px; overflow-y: auto;"></div>
+    <div style="max-height: 400px; overflow-y: auto;">
         <!-- Tabela de dados -->
         <table id="dataTable" class="display responsive" width="100%">
             <thead>
@@ -42,31 +42,30 @@
             <tbody>
                 {% for gasto in gastos %}
                     <tr>
-                        <tr>
-                            <td>{{ gasto.ano_movimentacao }}</td>
-                            <td>{{ gasto.mes_movimentacao }}</td>
-                            <td>{{ gasto.orgao_nome }}</td>
-                            <td>{{ gasto.unidade_nome }}</td>
-                            <td>{{ gasto.categoria_economica_nome }}</td>
-                            <td>{{ gasto.grupo_despesa_nome }}</td>
-                            <td>{{ gasto.modalidade_aplicacao_nome }}</td>
-                            <td>{{ gasto.elemento_nome }}</td>
-                            <td>{{ gasto.subelemento_nome }}</td>
-                            <td>{{ gasto.funcao_nome }}</td>
-                            <td>{{ gasto.subfuncao_nome }}</td>
-                            <td>{{ gasto.programa_nome }}</td>
-                            <td>{{ gasto.acao_nome }}</td>
-                            <td>{{ gasto.fonte_recurso_nome }}</td>
-                            <td>{{ gasto.empenho_ano }}</td>
-                            <td>{{ gasto.empenho_modalidade_nome }}</td>
-                            <td>{{ gasto.empenho_numero }}</td>
-                            <td>{{ gasto.subempenho }}</td>
-                            <td>{{ gasto.indicador_subempenho }}</td>
-                            <td>{{ gasto.credor_nome }}</td>
-                            <td>{{ gasto.modalidade_licitacao_nome }}</td>
-                            <td>{{ gasto.valor_empenhado }}</td>
-                            <td>{{ gasto.valor_liquidado }}</td>
-                            <td>{{ gasto.valor_pago }}</td>
+                        <td>{{ gasto.ano_movimentacao }}</td>
+                        <td>{{ gasto.mes_movimentacao }}</td>
+                        <td>{{ gasto.orgao_nome }}</td>
+                        <td>{{ gasto.unidade_nome }}</td>
+                        <td>{{ gasto.categoria_economica_nome }}</td>
+                        <td>{{ gasto.grupo_despesa_nome }}</td>
+                        <td>{{ gasto.modalidade_aplicacao_nome }}</td>
+                        <td>{{ gasto.elemento_nome }}</td>
+                        <td>{{ gasto.subelemento_nome }}</td>
+                        <td>{{ gasto.funcao_nome }}</td>
+                        <td>{{ gasto.subfuncao_nome }}</td>
+                        <td>{{ gasto.programa_nome }}</td>
+                        <td>{{ gasto.acao_nome }}</td>
+                        <td>{{ gasto.fonte_recurso_nome }}</td>
+                        <td>{{ gasto.empenho_ano }}</td>
+                        <td>{{ gasto.empenho_modalidade_nome }}</td>
+                        <td>{{ gasto.empenho_numero }}</td>
+                        <td>{{ gasto.subempenho }}</td>
+                        <td>{{ gasto.indicador_subempenho }}</td>
+                        <td>{{ gasto.credor_nome }}</td>
+                        <td>{{ gasto.modalidade_licitacao_nome }}</td>
+                        <td>{{ gasto.valor_empenhado }}</td>
+                        <td>{{ gasto.valor_liquidado }}</td>
+                        <td>{{ gasto.valor_pago }}</td>
                         <td>
                             <a href="{% url 'editar_dados' gasto.id %}" class="btn btn-warning">Editar</a>
                             <a href="{% url 'excluir_dados' gasto.id %}" class="btn btn-danger">Excluir</a>
@@ -78,3 +77,13 @@
     </div>
 </div>
 {% endblock %}
+
+<script>
+    $(document).ready(function () {
+        $('#dataTable').DataTable({
+            responsive: true, 
+            paging: true, 
+            // pageLength: 10,
+        });
+    });
+</script>
