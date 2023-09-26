@@ -15,7 +15,7 @@ Este é um projeto Django para rastreamento e gerenciamento de gastos públicos.
 1 **Clone este repositório:**
     
 ```bash
-git clone https://github.com/lucasribeirorsousa/projeto-gastos.git
+git clone https://github.com/seu-usuario/projeto-gastos.git
 cd projeto-gastos
 ```
 
@@ -28,6 +28,11 @@ source venv/bin/activate  # No Windows, use 'venv\Scripts\activate'
 3 **Instale as dependências do projeto:**
 ```bash
 pip install -r requirements.txt
+```
+
+4 **Crie um super usuário:**
+```bash
+python manage.py createsuperuser
 ```
 
 ## Configuração do Banco de Dados
@@ -52,12 +57,18 @@ DB_PORT=5432
 python manage.py migrate
 ```
 
+3 **Carregue dados de exemplo:**
+```bash 
+python manage.py loaddata fixtures/gastos_fixture.json
+```
+
 ## Inicialização do Servidor
 Para iniciar o servidor de desenvolvimento do Django, execute o seguinte comando:
 ```bash 
 python manage.py runserver
 ```
 Isso iniciará o servidor em http://localhost:8000/. Você pode acessar a interface do projeto a partir desse endereço.
+
 
 ## Rotas
 Aqui estão as principais rotas do projeto:
