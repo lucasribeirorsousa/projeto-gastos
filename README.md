@@ -58,3 +58,20 @@ Para iniciar o servidor de desenvolvimento do Django, execute o seguinte comando
 python manage.py runserver
 ```
 Isso iniciará o servidor em http://localhost:8000/. Você pode acessar a interface do projeto a partir desse endereço.
+
+## Rotas
+Aqui estão as principais rotas do projeto:
+
+- Página principal: http://localhost:8000/
+- Página de administração: http://localhost:8000/admin/
+- Visualizar gastos por mês: http://localhost:8000/despesas_por_mes/
+- Visualizar gastos por categoria: http://localhost:8000/despesas_por_categoria/
+- Visualizar fontes de dinheiro: http://localhost:8000/fontes_de_dinheiro/
+- Visualizar todos os dados: http://localhost:8000/todos_os_dados/
+- Adicionar/Editar Dados: http://localhost:8000/adicionar_editar_dados/
+- Editar Dados (ID específico): http://localhost:8000/editar_dados/1/ (substitua "1" pelo ID desejado)
+- Excluir Dados (ID específico): http://localhost:8000/excluir_dados/1/ (substitua "1" pelo ID desejado)
+
+API:
+- API para todos os dados: http://localhost:8000/api/todos_os_dados/
+- API para detalhes de um dado específico (ID específico): http://localhost:8000/api/todos_os_dados/1/ (substitua "1" pelo ID desejado)
